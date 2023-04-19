@@ -24,7 +24,7 @@
                     
                 
                 <a href="#" class="logo">
-                    <img src="phis3bluelogo.png" alt="logo">
+                    <img src="../images/phis3bluelogo.png" alt="logo">
                     <span class="nav-item"></span>
                     
                 </a>
@@ -44,11 +44,49 @@
             </a></li>
             <li><a href="#" class="logout">
                 <i class="fas fa-sign-out-alt"></i>
-                <span class="nav-item">Log Out</span>
+                <span class="nav-item" id="logout-btn">Log Out</span>
             
             
         </ul>
     </nav>
     
 </body>
+
+<script>
+//if user is not logged in, redirect to login page
+fetch("http://localhost:3000/auth/check", {
+    credentials: "include"
+}).then(function(response) {
+    return response.json();
+}).then(function(data) {
+    if (data.statusCode != 200) {
+        window.location.replace("/login");
+    }
+}).catch(function(err) {
+    console.log(err);
+    alert(err.message);
+    window.location.replace("/login");
+
+});
+
+
+// send logout request
+document.getElementById("logout-btn").addEventListener("click", function(e) {
+    e.preventDefault();
+    fetch("http://localhost:3000/auth/logout", {
+        method: "DELETE",
+        credentials: "include"
+    }).then(function(response) {
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+        window.location.replace("/login");
+    }).catch(function(err) {
+        console.log(err);
+        alert(err)
+    });
+});
+
+
+</script>
 </html>
