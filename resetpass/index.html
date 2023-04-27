@@ -5,6 +5,7 @@
     <title>Reset Password</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
     <style>
         /* Center align the registration form */
         .registration-form {
@@ -32,6 +33,9 @@
     <section class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
     <div class="container">
         <div class="row">
+
+            <div class="col-md-6 offset-md-3">
+                <div class="row" >
             
             <div class=" div-1 col-md-6 px-0">
                 <!-- Image on the left -->
@@ -39,26 +43,30 @@
                     <img src="../images/phis3log.png" alt="Image" class="img-fluid">
                 </div>
             </div>
+
+           
                 
                 <!-- Reset password on the right -->
                       <div class="col-md-6 px-0">
                         <div class="card">
-                          <div class="card-header bg-white">
-                            <h4>Reset Password</h4>
+                          <div style=" border-bottom: 1px;" class="card-header bg-white">
+                            <h4 style="font-weight: light;" class="text-left" class="text-center">Reset Password</h4>
                           </div>
                           <div class="card-body">
                             <form>
                               <div class="form-group">
-                                <label for="new-password">New Password</label>
-                                <input type="password" class="form-control" id="new-password" placeholder="Enter new password">
+                                <label for="new-password"></label>
+                                <input style="font-size: small;" type="password" class="form-control" id="new-password" placeholder="Enter new password">
                               </div>
                               <div class="form-group">
-                                <label for="confirm-password">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm new password">
+                                <label for="confirm-password"></label>
+                                <input style="font-size: small;" type="password" class="form-control" id="confirm-password" placeholder="Confirm new password"><br>
                               </div>
                               <button type="submit" class="btn btn-primary" id="reset-pass-btn">Reset Password</button>
                             </form>
                     
+                </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -71,7 +79,7 @@
 </body>
 </body>
 
-<script>
+<!-- <script>
     //get email and token from query string
     var urlParams = new URLSearchParams(window.location.search);
     var email = urlParams.get('email');
@@ -139,6 +147,6 @@
     // add an onkeyup event listener to the confirm password input
     $("#confirm-password").keyup(checkPasswordMatch);
 
-</script>
+</script> -->
 
 </html>
